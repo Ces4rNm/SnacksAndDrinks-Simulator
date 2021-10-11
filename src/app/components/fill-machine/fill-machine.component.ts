@@ -26,10 +26,10 @@ export class FillMachineComponent implements OnInit {
   onChange(newValue: any, type: string): void {
     switch (type) {
       case 'value':
-        if (Number(newValue) > 0) {
+        if (Number(newValue) >= 0) {
           this.appService.items[this.appService.machine.selected.index].value = newValue;
         } else {
-          this.appService.machine.selected.value = 100;
+          this.appService.machine.selected.value = 0;
         }
         break;
       case 'amount':
