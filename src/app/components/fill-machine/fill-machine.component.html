@@ -1,0 +1,27 @@
+<div id="fill">
+  <div class="stock">
+    <div class="products">
+      <div *ngFor="let item of appService.items;let i = index" (click)="select(i,item)"
+        [ngClass]="{'selected': appService.machine.selected.index==i}" class="product">
+        <img [src]="'assets/img/products/'+item.img">
+        <div class="value">
+          <span>${{item.value | moneyPipe}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="fields">
+    <label for="amount">Amount:</label>
+    <input [(ngModel)]="appService.machine.selected.amount" (ngModelChange)="onChange($event,'amount')" type="number"
+      min="1" max="8" id="amount">
+    <br>
+    <label for="value">Value:</label>
+    <input [(ngModel)]="appService.machine.selected.value" (ngModelChange)="onChange($event,'value')" type="number"
+      min="0" id="value">
+    <hr>
+    <label for="sales">All Sales:</label>
+    <br>
+    <!-- <input [(ngModel)]="appService.machine.sales" type="number" id="sales" disabled> -->
+    <span>{{appService.machine.sales | moneyPipe}}</span>
+  </div>
+</div>

@@ -1,16 +1,20 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FillMachineComponent } from './components/fill-machine/fill-machine.component';
+import { FormsModule } from '@angular/forms';
+import { MoneyPipe } from './app.pipe';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FillMachineComponent,
+    MoneyPipe
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

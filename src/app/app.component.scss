@@ -1,0 +1,237 @@
+@import "./style/default.scss";
+
+#main {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .machine {
+    background-color: $gray;
+    padding: 10px;
+    position: relative;
+    user-select: none;
+
+    .header {
+      background-color: $yellow;
+      border: 5px solid $red;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 5px;
+      margin-bottom: 5px;
+
+      .title {
+        color: $red;
+        margin: 0;
+      }
+    }
+
+    .content {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+
+      .glass {
+        border: 5px solid $red;
+
+        .products {
+          background-color: #fff9ec;
+          display: grid;
+          grid-template-columns: repeat(6, 1fr);
+          grid-gap: 2px;
+          grid-auto-rows: minmax(40px, auto);
+          box-shadow: inset 0px 0px 13px 5px #22465678;
+          //   filter: blur(0.1px);
+          padding: 5px;
+
+          .product {
+            position: relative;
+            cursor: pointer;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            width: 45px;
+            height: 45px;
+            box-shadow: inset 0px 0px 0px 1px $gray;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            margin-bottom: 3px;
+
+            img {
+              width: 30px;
+              margin: auto;
+
+              &:hover {
+                transform: scale(1.1);
+              }
+            }
+
+            .detail {
+              display: flex;
+              justify-content: space-between;
+              color: $gray;
+              position: absolute;
+              width: 100%;
+              top: -2px;
+              padding: 2px;
+              box-sizing: border-box;
+
+              span {
+                font-size: 8px;
+                font-weight: bold;
+              }
+            }
+
+            .value {
+              display: flex;
+              justify-content: center;
+              background-color: $red;
+              color: $yellow;
+              position: absolute;
+              width: 100%;
+              height: 9.6px;
+              bottom: 0px;
+
+              span {
+                font-size: 8px;
+              }
+            }
+          }
+        }
+
+        .output {
+          padding: 20px;
+          background: $red;
+          width: 100%;
+          box-sizing: border-box;
+          box-shadow: 0px 0px 0px 3px $red;
+
+          .exit {
+            height: 40px;
+            width: 100%;
+            background: linear-gradient(0deg, #000000ad, #50626C);
+            box-shadow: inset 0px 0px 0px 5px #b6b8b9;
+            cursor: pointer;
+          }
+        }
+      }
+
+      .board {
+        margin-left: 10px;
+        padding: 20px 0;
+        border: 5px solid #9e9e9e;
+        background-color: #9e9e9e;
+
+        .money {
+          margin-bottom: 10px;
+
+          select {
+            cursor: pointer;
+            background-color: $gray;
+            color: $yellow;
+            border: 5px solid #50626c;
+            width: 100%;
+
+            &:focus-visible {
+              outline: none;
+            }
+          }
+        }
+
+        .screen {
+          background-color: $teal;
+          color: $yellow;
+          padding: 5px;
+          margin-bottom: 10px;
+          font-size: 10px;
+          box-shadow: inset 0px 0px 13px 5px #22465678;
+          filter: blur(0.4px);
+          min-width: 80px;
+        }
+
+        .keys {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          grid-gap: 5px;
+          grid-auto-rows: minmax(20px, auto);
+          margin-bottom: 40px;
+
+          .btn {
+            cursor: pointer;
+            font-family: monospace;
+            background-color: $yellow;
+            border: 1px solid gray;
+            border-radius: 3px;
+            font-size: 8px;
+
+            &:hover {
+              box-shadow: inset 0px 0px 3px 0px #677d8a;
+            }
+
+            &.clear {
+              background-color: $red;
+              color: $yellow;
+            }
+
+            &.ok {
+              background-color: $teal;
+              color: $yellow;
+            }
+          }
+        }
+
+        .return {
+          .btn {
+            cursor: pointer;
+            background-color: $gray;
+            color: $yellow;
+            border: 5px solid #50626c;
+            width: 100%;
+            font-size: 8px;
+            margin-bottom: 10px;
+
+            &:hover {
+              box-shadow: inset 0px 0px 3px 0px #50626C;
+            }
+
+            &.fill {
+              margin-bottom: 0;
+              margin-top: 40px;
+              background-color: $yellow;
+              color: $red;
+              border: 5px solid #50626c;
+            }
+          }
+
+          .exit {
+            height: 30px;
+            width: 100%;
+            background: linear-gradient(0deg, #000000ad, #50626C);
+            box-shadow: inset 0px 0px 0px 5px #b6b8b9;
+            cursor: pointer;
+          }
+        }
+      }
+
+    }
+
+    .footer {
+      position: absolute;
+      top: 100%;
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      box-sizing: border-box;
+      margin-left: -10px;
+
+      .foot {
+        height: 10px;
+        width: 100px;
+        background-color: #000000b5;
+      }
+    }
+  }
+}

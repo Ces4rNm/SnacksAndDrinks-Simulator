@@ -1,1 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+@import "./app/style/default.scss";
+
+body {
+  margin: 0;
+  font-family: monospace;
+  background-color: $green;
+}
+
+.title {
+  small {
+    color: #677d8a;
+  }
+}

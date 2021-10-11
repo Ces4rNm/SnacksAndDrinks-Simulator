@@ -1,0 +1,125 @@
+@import "../../style/default.scss";
+
+#fill {
+  margin-right: 20px;
+
+  .stock {
+    max-height: 412px;
+    overflow: auto;
+
+    .products {
+      background-color: #fdf1d7;
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      grid-gap: 10px;
+      grid-auto-rows: minmax(40px, auto);
+      padding: 5px;
+
+      .product {
+        position: relative;
+        cursor: pointer;
+        margin: auto;
+        padding: 0;
+        text-align: center;
+        width: 45px;
+        height: 45px;
+        box-shadow: inset 0px 0px 0px 1px #677d8a;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin-bottom: 3px;
+
+        &.selected {
+          box-shadow: inset 0px 0px 0px 1px $teal;
+          background-color: $teal;
+        }
+
+        img {
+          width: 30px;
+          margin: auto;
+
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+
+        .detail {
+          display: flex;
+          justify-content: space-between;
+          color: $gray;
+          position: absolute;
+          width: 100%;
+          top: -2px;
+          padding: 2px;
+          box-sizing: border-box;
+
+          span {
+            font-size: 8px;
+            font-weight: bold;
+          }
+        }
+
+        .value {
+          display: flex;
+          justify-content: center;
+          background-color: $red;
+          color: $yellow;
+          position: absolute;
+          width: 100%;
+          height: 9.6px;
+          bottom: 0px;
+
+          span {
+            font-size: 8px;
+          }
+        }
+      }
+    }
+
+
+    &::-webkit-scrollbar {
+      width: 8px;
+      background-color: #50626c;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 0px;
+      background-color: #50626c;
+    }
+
+    &::-webkit-scrollbar-track {
+      border-radius: 0px;
+      background-color: $gray;
+    }
+  }
+
+  .fields {
+    margin-top: 10px;
+    width: 93px;
+    color: $yellow;
+    background-color: #677d8a;
+    padding: 10px;
+    box-sizing: border-box;
+
+    input {
+      width: 100%;
+      box-sizing: border-box;
+      background-color: #9E9E9E;
+      border: none;
+      color: $yellow;
+
+      &:focus-visible {
+        outline: none;
+      }
+
+      &#sales {
+        background-color: $teal;
+      }
+    }
+
+    hr {
+        border: none;
+        border-bottom: 2px solid $red;
+    }
+  }
+}
